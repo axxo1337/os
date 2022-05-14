@@ -12,7 +12,10 @@ clean:
 	@rm ${OBJS}
 # Kernel Build
 build-bin:
-	@nasm -felf32 ${ASMS}
+	for file in ${ASMS} ; do \
+		nasm -felf32 $$file ; \
+	done
+
 	@${CC} -c ${SRCS} ${CFLAGS}
 	@${CC} -T arch/i386/linker.ld ${LINKFLAGS} -o build/os.bin ${OBJS}
 	@mv *.o build

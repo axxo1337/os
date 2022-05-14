@@ -30,8 +30,6 @@ _start:
     ; Make the esp point to the top of the stack
     mov esp, stack_top
 
-    ; Load the GDT & other uninitialized CPU stuff
-
     ; Jump to the C++ code
     extern kernel_main
     call kernel_main
