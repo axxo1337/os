@@ -1,8 +1,8 @@
 CC=i686-elf-g++
 LD=i686-elf-ld
-CFLAGS=-w -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -fpermissive -I include
+CFLAGS=-w -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti -fpermissive -I ../
 LINKFLAGS=-ffreestanding -O2 -nostdlib -lgcc -I ../
-INCLUDE=-I ./include
+INCLUDE=-I ../
 
 ASMS = $(shell find -d . -name '*.s')
 SRCS = $(shell find -d . -name '*.cpp')
